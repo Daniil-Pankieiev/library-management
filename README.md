@@ -63,7 +63,7 @@ Features
     python manage.py migrate
     ```
 
-6**Run the development server**:
+6 **Run the development server**:
     ```bash
     python manage.py runserver
     ```
