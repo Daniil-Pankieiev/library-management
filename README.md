@@ -94,4 +94,5 @@ docker  exec library_backend-api-1  python manage.py test
 ###  Usage
 
 Navigate to http://127.0.0.1:8000/api/swagger/ to see SWAGGER documentation
+Register and use access token in headers with Bearer key
 
