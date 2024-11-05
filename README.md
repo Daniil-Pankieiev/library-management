@@ -26,6 +26,9 @@ Features
 - Python 3.8+
 - Docker
 
+### 
+Copy .env.sample to .env and populate it with all required data.
+
 ### Installation
 
 1. **Clone the repository**:
@@ -51,6 +54,7 @@ Features
     ```bash
     pip install -r requirements.txt
     ```
+
 
 4. Apply the migrations:
 
@@ -94,5 +98,12 @@ docker  exec library_backend-api-1  python manage.py test
 ###  Usage
 
 Navigate to http://127.0.0.1:8000/api/swagger/ to see SWAGGER documentation
-Register and use access token in headers with Bearer key
+After logging in with credentials you will receive two tokens: access token and refresh token.
+Add new request headed and enter information:
+
+Name: ``Authorization``
+
+Value: ``Bearer_space_*your_access_token*`` 
+
+Access token example. ``Bearer dmwkejeowk.ewkjeoqdowkjefowfejwefjwef.efhnwefowhefojw``
 
