@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14.1-alpine
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    networks:
+      - database_network
+    ports:
+      - "5433:5432"
+    command: [ "postgres", "-c", "log_statement=all" ]
+    env_file:
+      - .env
+    expose:
+      - 5430
+
+  api:
+    restart: always
+    build: .
+    entrypoint: ./entrypoint.sh 'development'
+    depends_on:
+      - db
+    volumes:
+      - .:/usr/src/scai-api/
+    networks:
+      - database_network
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+
+volumes:
+  db:
+
+networks:
+  database_network:
