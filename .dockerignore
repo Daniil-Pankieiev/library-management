@@ -1,2 +1,5 @@
 __postgres_data
 postgres_data
+db
+*.db
+./db
